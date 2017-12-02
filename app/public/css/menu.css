@@ -1,0 +1,108 @@
+
+body {
+  background-image: url('https://pbs.twimg.com/media/DNeDK22W0AAFb1R.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.container-fluid {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group{
+  color: white;
+  font-size: large;
+}
+
+.sign_in {
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-text {
+  color: white;
+  text-align: center;
+  font-size: 200px;
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+}
+
+.menu-text {
+  color: white;
+  text-align: center;
+  font-size: 100px;
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+}
+
+.sign_up_message {
+  padding-top: 10px;
+  text-align: center;
+}
+
+/* Add a black background color to the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: #6F90A2;
+}
+
+.topnav {
+  box-sizing: content-box;
+}
+
+.mx-auto {
+  font-size: 5000px;
+  color: inherit;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #113B51;
+    color: white;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+    background-color: red;
+    color: white;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+    .topnav a, .topnav input[type=text] {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+    .topnav input[type=text] {
+        border: 1px solid #ccc;
+    }
+}

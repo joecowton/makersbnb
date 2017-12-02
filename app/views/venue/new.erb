@@ -1,0 +1,61 @@
+<html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src='../../src/favorite.js' ></script>
+  <script src='../../css/menu.css' ></script>
+</head>
+
+<body>
+    <div class="index-page">
+      <br>
+      <h1> Add a new venue</h1>
+      <form action='/venue' method='post'>
+        <div class="form-group col-lg-10">
+          <div class="row">
+            <input class='input-boxes' name= 'title' type="text" placeholder="enter title" >
+          </div>
+        </div>
+        <div class="form-group col-lg-12">
+          <div class="row">
+            <input class='input-boxes' name= 'address' type="text" placeholder="enter address" >
+          </div>
+        </div>
+        <div class="form-group col-lg-12">
+          <div class="row">
+            <input class='input-boxes' name= 'city' type="text" placeholder="enter city" >
+          </div>
+        </div>
+        <div class="form-group col-lg-12">
+          <div class="row">
+            <input class='input-boxes' name= 'price' type="text" placeholder="enter price" >
+          </div>
+        </div>
+        <div class="form-group col-lg-12">
+          <div class="row">
+            <input class='input-boxes' name= 'description' type="text" placeholder="enter description" >
+          </div>
+        </div>
+        <div class="form-group col-lg-12">
+          <div class="row">
+            <input class='input-boxes' name= 'picture' type="url" placeholder="enter image" >
+          </div>
+        </div>
+        <div class="form-group col-lg-12">
+          <div class="row">
+            <input class='buttons' id="createVenue" value='Add' type="submit">
+          </div>
+        </div>
+      </form>
+
+      <br>
+      <h1> Click here go back to venues</h1>
+      <br>
+        <form action='/venue' method='get'>
+          <input class='buttons' id='go_venues' value='View Venues' type='submit'>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

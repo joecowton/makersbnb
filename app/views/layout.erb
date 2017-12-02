@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src='../src/search.js' ></script>
+  <script src='../css/menu.css' ></script>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" type='text/css' href="/css/menu.css">
+</head>
+
+<body>
+  <div class="topnav" id="myTopnav">
+    <a href="/">Home</a>
+    <a href="/venue">Venues</a>
+    <a href="/reservations">Reservations</a>
+    <a href="/favorite">Favourites</a>
+    <a href="/venue/new">Add Venue</a>
+    <input type="text" class="live-search-box" placeholder="Search..">
+  </div>
+
+
+    <% if flash[:notice] %>
+      <div id='notice'><%= flash[:notice] %></div>
+    <% end %>
+
+    <% if flash[:errors] %>
+      <div id='errors'><%= flash[:errors] %></div>
+    <% end %>
+
+    <% if flash[:taken] %>
+    <div id='taken'><%= flash[:taken] %></div>
+    <%end%>
+
+    <% if flash[:favorite] %>
+    <div id='favorite'><%= flash[:favorite] %></div>
+    <%end%>
+
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src='../../src/search.js' ></script>
+</head>
+
+<body>
+
+
+    <ul class="live-search-list">
+      <div class="container-fluid">
+        <div class="form-group col-lg-12">
+        <div class="row">
+      <ul>
+         <% @venues.reverse.each do |venue| %>
+          <br>
+            <img src= "<%= venue.pictures.map(&:path).join(',')  %>" height="200" width="200" > </span>
+          <br>
+            <span ><b>Title:</b> <%= venue.title %></span>
+          <br>
+            <span><b>Address:</b> <%= venue.address   %></span>
+          <br>
+            <span><b>City:</b> <%= venue.city   %></span>
+          <br>
+            <span><b>Price:</b> <%= venue.price   %></span>
+          <br>
+          <form action="/view/<%= venue.title%>">
+          <button class='buttons' id="view" >View</button>
+          </form>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+  </div>
+</body>
+
+</html>

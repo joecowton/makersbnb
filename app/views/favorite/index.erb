@@ -1,0 +1,24 @@
+<link rel="stylesheet" type='text/css' href="/css/buttons.css">
+
+<ul class="live-search-list">
+
+    <% if @favorite_venues %>
+      <% @favorite_venues.each do |venue| %>
+      <ul> <br>
+        <img src= "<%= venue.pictures.map(&:path).join(',')  %>" height="200" width="200" align="center"> </img>
+        <br>
+        <span> <b>Title:</b> <%= venue.title %></span>
+        <br>
+        <span><b>Address:</b> <%= venue.address   %></span>
+        <br>
+        <span><b>City:</b> <%= venue.city   %></span>
+        <br>
+        <span><b>Price:</b> <%= venue.price   %></span>
+        <br>
+        <span><b>Description:</b> <%= venue.description   %></span>
+        <br>   </ul>
+      <% end %>
+
+  <% else %>
+  You don't have any favorites!
+<%end%>

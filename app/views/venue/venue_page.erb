@@ -1,0 +1,72 @@
+
+<head>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="/src/date.js"></script>
+  <script src="/src/search.js"></script>
+</head>
+
+<body>
+      <div class="form-group col-lg-12">
+        <div class="row">
+          <img src= "<%= @venue.pictures.map(&:path).join(',')  %>" height="200" width="200" align="center"> </img>
+        </div>
+      </div>
+        <div class="form-group col-lg-12">
+          <div class="row">
+            <span> <b>Title:</b> <%= @venue.title %></span>
+          </div>
+        </div>
+        <div class="form-group col-lg-12">
+          <div class="row">
+            <span><b>Address:</b> <%= @venue.address   %></span>
+          </div>
+        </div>
+        <div class="form-group col-lg-12">
+          <div class="row">
+            <span><b>City:</b> <%= @venue.city   %></span>
+          </div>
+        </div>
+        <div class="form-group col-lg-12">
+          <div class="row">
+            <span><b>Price:</b> <%= @venue.price   %></span>
+          </div>
+        </div>
+        <div class="form-group col-lg-12">
+          <div class="row">
+            <span><b>Description:</b> <%= @venue.description   %></span>
+          </div>
+      </div>
+
+
+
+
+  <% if @name %>
+
+  <form action="/view/<%= @venue.title%>" method = "post">
+    <div class="form-group col-lg-12">
+      <div class="row">
+        <input id="startDate" type="text" name="startDate">
+      </div>
+    </div>
+    <div class="form-group col-lg-12">
+      <div class="row">
+        <input id="endDate" type="text" name="endDate">
+      </div>
+    </div>
+      <button class='btn btn-primary' id="book" >Book</button>
+    </form>
+
+      <form action='/favorite/new' method='post'>
+        <div class = 'favorite-button'>
+          <button class='buttons' id="favorite" name='favorite'>Favorite</button>
+        </div>
+      </form>
+
+      <% else %>
+          <div class = 'info-text'>
+            <a href='/'>Sign in</a> or <a href='/sign_up'>sign up</a> to book or add to favorites
+          </div>
+        <%end%>
+      </div>
+  </body>
+</html>
