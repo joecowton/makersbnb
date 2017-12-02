@@ -41,7 +41,6 @@ class Makersbnb < Sinatra::Base
 
   get '/venue' do
     @venues = Venue.all
-    p @venues
     erb :'venue/index'
   end
 
@@ -89,18 +88,17 @@ class Makersbnb < Sinatra::Base
   end
 
   post '/view/:title' do
-      venue = Venue.get(session[:venue_id])
-      venue_reservations = venue.reservations
-      reservation = Reservation.check(venue_reservations, params[:startDate], params[:endDate])
-      if reservation
-        flash[:taken] = 'Dates Unavailable'
-        redirect "/view/#{venue.title}"
-      else
-        reserve = Reservation.create(start_date: params[:startDate], end_date: params[:endDate])
-        save_to_database(venue, venue.reservations, reserve)
-        save_to_database(current_user, current_user.reservations, reserve)
-        redirect '/reservations'
-      end
+    venue = Venue.get(session[:venue_id])
+    venue_reservations = venue.reservations
+    reservation = Reservation.check(venue_reservations, params[:startDate], params[:endDate])
+    if reservation
+      flash[:taken] = 'Dates Unavailable'
+      redirect "/view/#{venue.title}"
+    else
+      reserve = Reservation.create(start_date: params[:startDate], end_date: params[:endDate])
+      save_to_database(venue, venue.reservations, reserve)
+      save_to_database(current_user, current_user.reservations, reserve)
+      redirect '/reservations'
     end
   end
 
