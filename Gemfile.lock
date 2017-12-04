@@ -165,6 +165,7 @@ DEPENDENCIES
   data_mapper
   database_cleaner
   dm-postgres-adapter
+  json
   pry
   rack
   rake

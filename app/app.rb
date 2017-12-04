@@ -2,6 +2,7 @@ ENV['RACK_ENV'] ||= 'development'
 require 'sinatra/base'
 require 'sinatra/flash'
 require_relative 'dm_setup'
+require 'json'
 
 class Makersbnb < Sinatra::Base
   enable :sessions
@@ -52,6 +53,17 @@ class Makersbnb < Sinatra::Base
       redirect '/'
     end
   end
+
+  get '/venue/all' do
+    content_type :json
+    Venue.all.to_json
+  end
+
+  get '/venue/list' do
+    erb :'venue/list'
+  end
+
+
 
   post '/venue' do
     venue = Venue.first_or_create(

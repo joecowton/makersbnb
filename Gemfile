@@ -11,6 +11,7 @@ gem 'sinatra'
 gem 'sinatra-flash'
 gem 'pry'
 gem 'rack'
+gem 'json'
 
 
 group :test do
