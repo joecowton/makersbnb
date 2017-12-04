@@ -1,0 +1,11 @@
+.venues {
+  font-size: 20px;
+  color: white;
+  align-self: center;
+}
+.title{
+  font-family: 'Cabin';
+  font-size: 50px;
+  font-weight: 700;
+  color: white;
+}

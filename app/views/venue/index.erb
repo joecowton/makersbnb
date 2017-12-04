@@ -1,42 +1,13 @@
 <html>
-
-<head>
   <head>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" type='text/css' href="/css/menu.css">
+    <link rel="stylesheet" type='text/css' href="/css/list.css">
     <script src='../src/search.js' ></script>
+    <script src='../src/venue.js' ></script>
   </head>
-</head>
 
-<body>
-    <ul class="live-search-list">
-      <div class="container-fluid">
-        <div class="form-group col-lg-12">
-          <div class="row">
-            <ul>
-         <% @venues.reverse.each do |venue| %>
-          <br>
-            <img src= "<%= venue.pictures.map(&:path).join(',')  %>" height="200" width="200" > </span>
-          <br>
-            <span ><b>Title:</b> <%= venue.title %></span>
-          <br>
-            <span><b>Address:</b> <%= venue.address   %></span>
-          <br>
-            <span><b>City:</b> <%= venue.city   %></span>
-          <br>
-            <span><b>Price:</b> <%= venue.price   %></span>
-          <br>
-          <form action="/view/<%= venue.title%>">
-          <button class='buttons' id="view" >View</button>
-          </form>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-</div>
-
-</body>
-
+  <body>
+      <div class="venues" id="venues" >
+  </body>
 </html>

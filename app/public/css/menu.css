@@ -14,6 +14,12 @@ body {
     align-items: center;
 }
 
+.venues {
+  font-size: 1000px;
+  color: white;
+  align-self: center;
+}
+
 .form-group{
   color: white;
   font-size: large;

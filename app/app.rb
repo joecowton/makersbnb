@@ -56,14 +56,12 @@ class Makersbnb < Sinatra::Base
 
   get '/venue/all' do
     content_type :json
-    Venue.all.to_json
+    Venue.all_data.to_json
   end
 
   get '/venue/list' do
     erb :'venue/list'
   end
-
-
 
   post '/venue' do
     venue = Venue.first_or_create(
