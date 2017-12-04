@@ -14,8 +14,8 @@
     <ul class="live-search-list">
       <div class="container-fluid">
         <div class="form-group col-lg-12">
-        <div class="row">
-      <ul>
+          <div class="row">
+            <ul>
          <% @venues.reverse.each do |venue| %>
           <br>
             <img src= "<%= venue.pictures.map(&:path).join(',')  %>" height="200" width="200" > </span>
@@ -36,7 +36,7 @@
     </div>
   </div>
 </div>
-  </div>
+
 </body>
 
 </html>

@@ -81,10 +81,15 @@ class Makersbnb < Sinatra::Base
   end
 
   get '/view/:title' do
-    @name = current_user.name
-    @venue = Venue.all(title: params[:title]).last
-    session[:venue_id] = @venue.id
-    erb :'venue/venue_page'
+    if current_user
+      @name = current_user.name
+      @venue = Venue.all(title: params[:title]).last
+      session[:venue_id] = @venue.id
+      erb :'venue/venue_page'
+    else
+      flash[:errors] = "Sign in or sign up to view venues"
+      redirect '/'
+    end
   end
 
   post '/view/:title' do
