@@ -1,14 +1,11 @@
 $(document).ready(function($){
 
-$('#favorite').click(function(){
-  var title = $('#title').val;
-  console.log("hello")
-  postFavorite(title)
-})
+  $('.favorite-button').click(function(){
+    $.post('/favorite/new')
+  })
 
-function postFavorite(title) {
-  console.log("Second")
-  console.log(title)
-  $.post('/favorite/new', {title: title})
-}
+  $('.book').click(function(){
+    // $.post('/favorite/new')
+    console.log("hello" )
+  })
 });

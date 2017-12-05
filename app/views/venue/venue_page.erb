@@ -1,9 +1,11 @@
 
 <head>
-  <link rel="stylesheet" type='text/css' href="/css/menu.css">
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="/src/date.js"></script>
+  <meta charset="utf-8"><script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="/src/date.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="/src/search.js"></script>
+  <script src="/src/favorite.js"></script>
 </head>
 
 <body>
@@ -32,25 +34,17 @@
           </div>
       </div>
 
-  <% if @name %>
-  <form action="/view/<%= @venue.title%>" method = "post">
-    <div class="form-group col-lg-12">
-      <div class="row">
-        <input id="startDate" type="text" name="startDate">
-      </div>
-    </div>
-    <div class="form-group col-lg-12">
-      <div class="row">
-        <input id="endDate" type="text" name="endDate">
-      </div>
-    </div>
-      <button class='btn btn-primary' id="book" >Book</button>
-    </form>
-      <form action='/favorite/new' method='post'>
-        <div class = 'favorite-button'>
-          <button class='buttons' id="favorite" name='favorite'>Favorite</button>
-        </div>
-      </form>
+      <% if @name %>
+      <form action="/view/<%= @venue.title%>" method = "post">
+        <p>Start Date: <input id="startDate" type="text" name="startDate"></p>
+        <br>
+        <p>End Date: <input id="endDate" type="text" name="endDate"></p>
+        <br>
+        <div class = 'both-buttons'>
+          <div class = 'book-button'>
+            <button class='buttons' id="book" >Book</button>
+          </div>
+        </form>
       <% else %>
           <div class = 'info-text'>
             <a href='/'>Sign in</a> or <a href='/sign_up'>sign up</a> to book or add to favorites
