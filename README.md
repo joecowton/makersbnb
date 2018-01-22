@@ -4,7 +4,7 @@
 Makers BnB.
 ------
 
-Taken from[this group practice project](https://github.com/joecowton/makersbnb) and changed styling.
+Taken from [this group practice project](https://github.com/joecowton/makersbnb) and changed styling.
 
 ### Our task
 
